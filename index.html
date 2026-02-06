@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Odisha Knowledge Hub</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+/* ===== RESET ===== */
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+  font-family:Arial, sans-serif;
+}
+
+/* ===== LOADER ===== */
+#loader{
+  position:fixed;
+  inset:0;
+  background:#ffffff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:9999;
+}
+
+.loader-circle{
+  width:80px;
+  height:80px;
+  border:8px solid #e0e0e0;
+  border-top:8px solid #2196F3;
+  border-radius:50%;
+  animation:spin 1s linear infinite;
+}
+
+@keyframes spin{
+  0%{transform:rotate(0deg);}
+  100%{transform:rotate(360deg);}
+}
+
+/* ===== PAGE ===== */
+body{
+  background:#f4f6f8;
+}
+
+.container{
+  padding:16px;
+  display:none;
+}
+
+h2{
+  margin:22px 0 12px;
+  color:#222;
+  font-size:20px;
+  border-left:4px solid #2196F3;
+  padding-left:10px;
+}
+
+/* ===== CARD GRID ===== */
+.card-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+  margin-bottom:12px;
+}
+
+/* ===== CARD ===== */
+.card{
+  background:#fff;
+  padding:16px 10px;
+  border-radius:12px;
+  text-align:center;
+  box-shadow:0 4px 10px rgba(0,0,0,0.08);
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 8px 16px rgba(0,0,0,0.15);
+}
+
+.card a{
+  text-decoration:none;
+  color:#333;
+  font-weight:600;
+  font-size:14px;
+  display:block;
+}
+
+/* ===== MOBILE ===== */
+@media(max-width:768px){
+  .card-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+@media(max-width:480px){
+  .card-grid{
+    grid-template-columns:1fr;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ===== LOADER ===== -->
+<div id="loader">
+  <div class="loader-circle"></div>
+</div>
+
+<!-- ===== CONTENT ===== -->
+<div class="container" id="content">
+
+  <h2>General Introduction of Odisha</h2>
+  <div class="card-grid">
+    <div class="card"><a href="ODISHA-AT-A-GLANCE.html">ODISHA AT A GLANCE</a></div>
+    <div class="card"><a href="#">State Formation</a></div>
+    <div class="card"><a href="#">Language & People</a></div>
+    <div class="card"><a href="#">About Odisha</a></div>
+    <div class="card"><a href="#">State Formation</a></div>
+    <div class="card"><a href="#">Language & People</a></div>
+  </div>
+  <div class="card-grid">
+    <div class="card"><a href="#">Climate</a></div>
+    <div class="card"><a href="#">Festivals</a></div>
+    <div class="card"><a href="#">Demographics</a></div>
+  </div>
+
+  <h2>History of Odisha</h2>
+  <div class="card-grid">
+    <div class="card"><a href="#">Ancient History</a></div>
+    <div class="card"><a href="#">Medieval Period</a></div>
+    <div class="card"><a href="#">Major Empires</a></div>
+  </div>
+  <div class="card-grid">
+    <div class="card"><a href="#">British Rule</a></div>
+    <div class="card"><a href="#">Freedom Movement</a></div>
+    <div class="card"><a href="#">Tribal Movements</a></div>
+  </div>
+
+  <h2>Art & Culture of Odisha</h2>
+  <div class="card-grid">
+    <div class="card"><a href="#">Odissi Dance</a></div>
+    <div class="card"><a href="#">Handicrafts</a></div>
+    <div class="card"><a href="#">Pattachitra</a></div>
+  </div>
+  <div class="card-grid">
+    <div class="card"><a href="#">Music</a></div>
+    <div class="card"><a href="#">Literature</a></div>
+    <div class="card"><a href="#">Temple Architecture</a></div>
+  </div>
+
+  <h2>Geography of Odisha</h2>
+  <div class="card-grid">
+    <div class="card"><a href="#">Physical Features</a></div>
+    <div class="card"><a href="#">Rivers</a></div>
+    <div class="card"><a href="#">Mountains</a></div>
+  </div>
+  <div class="card-grid">
+    <div class="card"><a href="#">Soil Types</a></div>
+    <div class="card"><a href="#">Forests</a></div>
+    <div class="card"><a href="#">Coastal Plains</a></div>
+  </div>
+
+  <h2>Political System of Odisha</h2>
+  <div class="card-grid">
+    <div class="card"><a href="#">Governor</a></div>
+    <div class="card"><a href="#">Chief Minister</a></div>
+    <div class="card"><a href="#">Legislative Assembly</a></div>
+  </div>
+  <div class="card-grid">
+    <div class="card"><a href="#">Judiciary</a></div>
+    <div class="card"><a href="#">Local Governance</a></div>
+    <div class="card"><a href="#">Elections</a></div>
+  </div>
+
+  <h2>Economy of Odisha</h2>
+  <div class="card-grid">
+    <div class="card"><a href="#">Agriculture</a></div>
+    <div class="card"><a href="#">Industries</a></div>
+    <div class="card"><a href="#">Mineral Resources</a></div>
+  </div>
+  <div class="card-grid">
+    <div class="card"><a href="#">Ports</a></div>
+    <div class="card"><a href="#">Exports</a></div>
+    <div class="card"><a href="#">Employment</a></div>
+  </div>
+
+  <h2>Sports & Awards in Odisha</h2>
+  <div class="card-grid">
+    <div class="card"><a href="#">Hockey Legacy</a></div>
+    <div class="card"><a href="#">Sports Policy</a></div>
+    <div class="card"><a href="#">National Awards</a></div>
+  </div>
+  <div class="card-grid">
+    <div class="card"><a href="#">Athletes</a></div>
+    <div class="card"><a href="#">Stadiums</a></div>
+    <div class="card"><a href="#">Sports Events</a></div>
+  </div>
+
+  <h2>Miscellaneous</h2>
+  <div class="card-grid">
+    <div class="card"><a href="#">Tourism</a></div>
+    <div class="card"><a href="#">Wildlife</a></div>
+    <div class="card"><a href="#">Important Days</a></div>
+  </div>
+  <div class="card-grid">
+    <div class="card"><a href="#">Famous Personalities</a></div>
+    <div class="card"><a href="#">Current Affairs</a></div>
+    <div class="card"><a href="#">Facts & Records</a></div>
+  </div>
+
+</div>
+
+<script>
+window.onload=function(){
+  setTimeout(()=>{
+    document.getElementById("loader").style.display="none";
+    document.getElementById("content").style.display="block";
+  },1200); // loader duration
+};
+</script>
+
+</body>
+</html>
