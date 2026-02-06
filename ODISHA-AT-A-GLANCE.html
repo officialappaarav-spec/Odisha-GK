@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Reading Passage with Quiz</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:#f4f6f8;
+  color:#333;
+}
+.container{
+  max-width:900px;
+  margin:auto;
+  padding:15px;
+}
+.card{
+  background:#fff;
+  border-radius:10px;
+  padding:15px;
+  margin-bottom:15px;
+  box-shadow:0 2px 6px rgba(0,0,0,0.1);
+}
+button{
+  border:none;
+  border-radius:8px;
+  padding:12px;
+  font-size:16px;
+  cursor:pointer;
+}
+.primary{
+  background:#2196f3;
+  color:#fff;
+}
+.secondary{
+  background:#ddd;
+}
+.option{
+  padding:12px;
+  border:1px solid #ccc;
+  border-radius:8px;
+  margin:8px 0;
+  cursor:pointer;
+}
+.option.selected{
+  background:#e3f2fd;
+  border-color:#2196f3;
+}
+.hidden{display:none;}
+.nav-btns{
+  display:flex;
+  gap:10px;
+  margin-top:10px;
+}
+.tabs{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+}
+.tab{
+  padding:8px 12px;
+  border-radius:20px;
+  background:#eee;
+  cursor:pointer;
+  font-size:14px;
+}
+.tab.active{
+  background:#2196f3;
+  color:#fff;
+}
+.q-review{
+  margin-top:10px;
+  border-top:1px solid #ddd;
+  padding-top:10px;
+}
+.correct{color:green;}
+.wrong{color:red;}
+@media(max-width:600px){
+  button{font-size:15px;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- PASSAGE -->
+<div id="passage" class="card">
+<center><h2>Odisha At a Glance</h2></center>
+<p>
+Odisha, earlier called Orissa (this name was officially used until 2011), is a state in eastern India. 
+It is the 8th largest state in area and the 11th largest in population in India. 
+Odisha has the second-largest population of Scheduled Tribes in the country.
+</p>
+
+<p>
+Odisha shares its borders with Jharkhand and West Bengal in the north, Chhattisgarh in the west, 
+and Andhra Pradesh in the south. 
+The total area of the state is 155,707 square kilometres, which is about 4.87% of India’s total land area.
+</p>
+
+<p>
+The state has a long coastline of 485 kilometres along the Bay of Bengal in the Indian Ocean. 
+In the eastern part of Odisha, there is a coastal plain that stretches from the Subarnarekha River in the north 
+to the Rushikulya River in the south. 
+Chilika Lake, one of the largest lagoons in Asia, is also located in this coastal plain.
+</p>
+
+<p>
+The coastal plains are very fertile because they receive rich soil (silt) from six major rivers 
+that flow into the Bay of Bengal.
+<br>
+These rivers are Subarnarekha, Budhabalanga, Baitarani, Brahmani, Mahanadi, and Rushikulya.
+</p>
+
+<p>
+Odisha is also known as Utkala, a name that appears in India’s national anthem 
+<strong>“Jana Gana Mana”</strong>.
+<br>
+The main language spoken in Odisha is Odia, which is one of the Classical Languages of India.
+</p>
+
+<p>
+In ancient times, this region was known as Kalinga.
+<br>
+It was attacked by the Mauryan Emperor Ashoka in 261 BCE, leading to the famous Kalinga War.
+<br>
+Later, the region was regained by King Kharavela.
+<br>
+The ancient land of Kalinga mostly matches the present-day area of Odisha.
+</p>
+
+<p>
+The modern state of Odisha was officially formed on <strong>1 April 1936</strong>, 
+when the British Indian government created Orissa Province by joining the Odia-speaking areas 
+of Bihar and the Orissa region.
+</p><br><br>
+
+<h3>Most Important Points of Odisha</h3>
+<ul>
+  <li>The official name of the state is <strong>Odisha</strong>.</li>
+  <li>The capital of Odisha is <strong>Bhubaneswar</strong>.</li>
+  <li>Odisha was established on <strong>1st April 1936</strong>.</li>
+  <li>The largest city of Odisha is <strong>Bhubaneswar</strong>.</li>
+  <li>Odisha lies between <strong>17°49′ N and 22°34′ N latitude</strong>.</li>
+  <li>It extends from <strong>81°27′ E to 87°29′ E longitude</strong>.</li>
+  <li>The total area of Odisha is <strong>1,55,707 square kilometres</strong>.</li>
+  <li>Odisha has <strong>30 districts</strong>.</li>
+  <li>There are <strong>58 sub-divisions</strong> in the state.</li>
+  <li>Odisha has <strong>314 blocks</strong>.</li>
+  <li>The state has <strong>5 municipal corporations</strong>.</li>
+  <li>There are <strong>223 towns</strong> in Odisha.</li>
+  <li>Odisha has <strong>51,313 villages</strong>.</li>
+  <li>The highest peak of Odisha is <strong>Deomali (5,486 feet)</strong>.</li>
+  <li>The official language of Odisha is <strong>Odia</strong>.</li>
+  <li>The state mammal of Odisha is <strong>Sambar</strong>.</li>
+  <li>The state bird of Odisha is <strong>Indian Roller</strong>.</li>
+  <li>The state fish of Odisha is <strong>Mahanadi Mahseer</strong>.</li>
+  <li>The state flower of Odisha is <strong>Ashoka</strong>.</li>
+  <li>The state tree of Odisha is <strong>Sacred Fig</strong>.</li>
+  <li>The state dance of Odisha is <strong>Odissi</strong>.</li>
+  <li>The state food of Odisha is <strong>Pakhala</strong>.</li>
+  <li>The state sweet of Odisha is <strong>Rasagola</strong>.</li>
+  <li>The main airport of Odisha is in <strong>Bhubaneswar</strong>.</li>
+  <li>Odisha has <strong>21 Lok Sabha constituencies</strong>.</li>
+  <li>Odisha has <strong>10 Rajya Sabha seats</strong>.</li>
+  <li>Odisha has <strong>147 Vidhan Sabha constituencies</strong>.</li>
+</ul>    
+<br>
+<center><button class="primary" onclick="startQuiz()">Attempt Questions</button></center>
+</div>
+
+<!-- QUIZ -->
+<div id="quiz" class="card hidden">
+<h3 id="qText"></h3>
+<div id="options"></div>
+
+<div class="nav-btns">
+<button class="secondary" onclick="prevQ()">Previous</button>
+<button class="primary" id="nextBtn" onclick="nextQ()">Next</button>
+</div>
+</div>
+
+<!-- RESULT -->
+<div id="result" class="card hidden">
+<h3>Result Summary</h3>
+<p id="summary"></p>
+
+<div class="tabs">
+<div class="tab active" onclick="filterReview('all')">All</div>
+<div class="tab" onclick="filterReview('correct')">Correct</div>
+<div class="tab" onclick="filterReview('wrong')">Wrong</div>
+<div class="tab" onclick="filterReview('unattempted')">Unattempted</div>
+</div>
+
+<div id="review"></div>
+
+<button class="secondary" onclick="closeQuiz()">Close</button>
+</div>
+
+</div>
+
+<script>
+const questions = [
+{
+q:"When was the state of Orissa officially renamed as Odisha?",
+options:["2009","2011","2010","2012"],
+ans:1
+},
+{
+q:"Odisha ranks as the ___ largest state in India in terms of geographical area.",
+options:["6th","7th","8th","9th"],
+ans:2
+},
+{
+q:"Odisha is the ___ largest state in India by population.",
+options:["9th","10th","11th","12th"],
+ans:2
+},
+{
+q:"Odisha has the ___ largest Scheduled Tribe population among Indian states.",
+options:["First","Second","Third","Fourth"],
+ans:1
+},
+{
+q:"What is the total geographical area of Odisha?",
+options:["1,45,707 sq km","1,55,707 sq km","1,65,707 sq km","1,75,707 sq km"],
+ans:1
+},
+{
+q:"Odisha accounts for approximately ___ percent of India’s total geographical area.",
+options:["4.27%","4.57%","4.87%","5.07%"],
+ans:2
+},
+{
+q:"Odisha has a coastline of approximately ___ km or ___ miles along the Bay of Bengal.",
+options:["450 km / 280 miles","485 km / 301 miles","510 km / 320 miles","530 km / 330 miles"],
+ans:1
+},
+{
+q:"By which name was Odisha predominantly known in ancient Indian history?",
+options:["Utkala","Tosala","Odra","Kalinga"],
+ans:3
+},
+{
+q:"Which Mauryan emperor invaded Kalinga in 261 BCE, leading to a historic transformation in his rule?",
+options:["Bindusara","Chandragupta Maurya","Ashoka","Dasharatha"],
+ans:2
+},
+{
+q:"In which year did the historic Kalinga War take place?",
+options:["268 BCE","265 BCE","261 BCE","256 BCE"],
+ans:2
+},
+{
+q:"Which war is historically associated with Emperor Ashoka’s adoption of Dhamma?",
+options:["Battle of Pataliputra","Battle of Taxila","Kalinga War","Battle of Magadha"],
+ans:2
+},
+{
+q:"Who restored the independence of Kalinga after the decline of Mauryan rule?",
+options:["Mahapadma Nanda","Gautamiputra Satakarni","King Kharavela","Samudragupta"],
+ans:2
+},
+{
+q:"The ancient region of Kalinga largely corresponds to which present-day Indian state?",
+options:["Andhra Pradesh","Chhattisgarh","West Bengal","Odisha"],
+ans:3
+},
+{
+q:"Which conflict proved to be the most decisive turning point in Emperor Ashoka’s reign?",
+options:["Taxila Revolt","Deccan Campaign","Kalinga War","Himalayan Expedition"],
+ans:2
+},
+{
+q:"On which date was Odisha formed as a separate province during British rule?",
+options:["26 January 1930","15 August 1947","1 April 1936","2 October 1935"],
+ans:2
+},
+{
+q:"Which city is the largest urban agglomeration of Odisha by administrative importance?",
+options:["Cuttack","Rourkela","Sambalpur","Bhubaneswar"],
+ans:3
+},
+{
+q:"Between which latitudinal extents does the state of Odisha lie?",
+options:["16°10′ N to 21°30′ N","17°49′ N to 22°34′ N","18°20′ N to 23°10′ N","19°00′ N to 24°00′ N"],
+ans:1
+},
+{
+q:"Odisha extends longitudinally between which meridians?",
+options:["80°15′ E to 86°30′ E","81°27′ E to 87°29′ E","82°00′ E to 88°00′ E","83°10′ E to 89°20′ E"],
+ans:1
+},
+{
+q:"What is the officially recorded total geographical area of Odisha?",
+options:["1,45,500 sq km","1,50,707 sq km","1,55,707 sq km","1,60,707 sq km"],
+ans:2
+},
+{
+q:"How many administrative districts are currently there in Odisha?",
+options:["28","29","30","31"],
+ans:2
+},
+{
+q:"Odisha is administratively divided into how many sub-divisions?",
+options:["55","56","58","60"],
+ans:2
+},
+{
+q:"What is the total number of community development blocks in Odisha?",
+options:["300","314","320","325"],
+ans:1
+},
+{
+q:"How many municipal corporations function in the state of Odisha?",
+options:["4","5","6","7"],
+ans:1
+},
+{
+q:"What is the total number of towns recorded in Odisha?",
+options:["210","223","235","248"],
+ans:1
+},
+{
+q:"According to official records, how many villages are there in Odisha?",
+options:["49,820","50,905","51,313","52,140"],
+ans:2
+},
+{
+q:"Which is the highest mountain peak located in the state of Odisha?",
+options:["Mahendragiri","Malayagiri","Meghasani","Deomali"],
+ans:3
+},
+{
+q:"What is the elevation of Deomali Peak above mean sea level?",
+options:["5,200 feet","5,350 feet","5,486 feet","5,620 feet"],
+ans:2
+},
+{
+q:"Which language holds the status of the official language of Odisha?",
+options:["Hindi","English","Sanskrit","Odia"],
+ans:3
+},
+{
+q:"Which animal has been officially designated as the state mammal of Odisha?",
+options:["Royal Bengal Tiger","Asian Elephant","Sambar","Indian Bison"],
+ans:2
+},
+{
+q:"Which bird is recognized as the state bird of Odisha?",
+options:["Peacock","House Sparrow","Sarus Crane","Indian Roller"],
+ans:3
+},
+{
+q:"Which aquatic species has been officially declared as the state fish of Odisha?",
+options:["Rohu","Hilsa","Catla","Mahanadi Mahseer"],
+ans:3
+},
+{
+q:"Which flowering plant holds the status of the state flower of Odisha?",
+options:["Lotus","Ashoka","Rose","Jasmine"],
+ans:1
+},
+{
+q:"Which tree is officially recognized as the state tree of Odisha?",
+options:["Banyan","Neem","Mango","Sacred Fig"],
+ans:3
+},
+{
+q:"Which classical dance form is designated as the state dance of Odisha?",
+options:["Kuchipudi","Kathak","Bharatanatyam","Odissi"],
+ans:3
+},
+{
+q:"Which traditional dish is widely regarded as the state food of Odisha?",
+options:["Dalma","Chuda Mix","Machha Besara","Pakhala"],
+ans:3
+},
+{
+q:"Which traditional sweet has received recognition as the state sweet of Odisha?",
+options:["Chhena Poda","Khaja","Rasabali","Rasagola"],
+ans:3
+},
+{
+q:"The primary and busiest airport of Odisha is located in which city?",
+options:["Cuttack","Rourkela","Jharsuguda","Bhubaneswar"],
+ans:3
+},
+{
+q:"How many Lok Sabha constituencies does the state of Odisha have at present?",
+options:["19","20","21","22"],
+ans:2
+},
+{
+q:"How many representatives does Odisha send to the Rajya Sabha?",
+options:["8","9","10","11"],
+ans:2
+},
+{
+q:"What is the total number of Vidhan Sabha constituencies in Odisha?",
+options:["140","145","147","150"],
+ans:2
+}
+];
+
+let index = 0;
+let answers = JSON.parse(localStorage.getItem("odishaQuiz")) || {};
+
+function startQuiz(){
+  answers = {}; // reset old stored answers
+  localStorage.removeItem("odishaQuiz"); // clear storage
+  index = 0;
+
+  passage.classList.add("hidden");
+  quiz.classList.remove("hidden");
+  loadQ();
+}
+
+function loadQ(){
+  let q = questions[index];
+  qText.innerText = (index+1)+". "+q.q;
+  options.innerHTML="";
+  q.options.forEach((op,i)=>{
+    let div=document.createElement("div");
+    div.className="option";
+    if(answers[index]===i) div.classList.add("selected");
+    div.innerText=op;
+    div.onclick=()=>{
+      answers[index]=i;
+      localStorage.setItem("odishaQuiz",JSON.stringify(answers));
+      loadQ();
+    };
+    options.appendChild(div);
+  });
+  nextBtn.innerText = index===questions.length-1 ? "Submit" : "Next";
+}
+
+function nextQ(){
+  if(index===questions.length-1){
+    showResult();
+  }else{
+    index++;
+    loadQ();
+  }
+}
+function prevQ(){
+  if(index>0){index--;loadQ();}
+}
+
+function showResult(){
+  quiz.classList.add("hidden");
+  result.classList.remove("hidden");
+
+  let c=0,w=0,u=0;
+  questions.forEach((q,i)=>{
+    if(answers[i]==null) u++;
+    else if(answers[i]===q.ans) c++;
+    else w++;
+  });
+  summary.innerText=`Correct: ${c}, Wrong: ${w}, Unattempted: ${u}`;
+  buildReview("all");
+}
+
+function buildReview(type){
+  review.innerHTML="";
+  questions.forEach((q,i)=>{
+    let ua=answers[i];
+    let status = ua==null ? "unattempted" : ua===q.ans ? "correct" : "wrong";
+    if(type!=="all" && type!==status) return;
+
+    let div=document.createElement("div");
+    div.className="q-review";
+    div.innerHTML=`<b>${i+1}. ${q.q}</b><br>
+    Your answer: <span class="${status}">${ua!=null?q.options[ua]:"Not Attempted"}</span><br>
+    Correct answer: <b>${q.options[q.ans]}</b>`;
+    review.appendChild(div);
+  });
+}
+
+function filterReview(t){
+  document.querySelectorAll(".tab").forEach(x=>x.classList.remove("active"));
+  event.target.classList.add("active");
+  buildReview(t);
+}
+
+function closeQuiz(){
+  result.classList.add("hidden");
+  passage.classList.remove("hidden");
+}
+</script>
+
+</body>
+</html>
