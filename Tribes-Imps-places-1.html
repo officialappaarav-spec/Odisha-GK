@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Reading Passage with Quiz</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:#f4f6f8;
+  color:#333;
+}
+.container{
+  max-width:900px;
+  margin:auto;
+  padding:15px;
+}
+.card{
+  background:#fff;
+  border-radius:10px;
+  padding:15px;
+  margin-bottom:15px;
+  box-shadow:0 2px 6px rgba(0,0,0,0.1);
+}
+button{
+  border:none;
+  border-radius:8px;
+  padding:12px;
+  font-size:16px;
+  cursor:pointer;
+}
+.primary{
+  background:#2196f3;
+  color:#fff;
+}
+.secondary{
+  background:#ddd;
+}
+.option{
+  padding:12px;
+  border:1px solid #ccc;
+  border-radius:8px;
+  margin:8px 0;
+  cursor:pointer;
+}
+.option.selected{
+  background:#e3f2fd;
+  border-color:#2196f3;
+}
+.hidden{display:none;}
+.nav-btns{
+  display:flex;
+  gap:10px;
+  margin-top:10px;
+}
+.tabs{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+}
+.tab{
+  padding:8px 12px;
+  border-radius:20px;
+  background:#eee;
+  cursor:pointer;
+  font-size:14px;
+}
+.tab.active{
+  background:#2196f3;
+  color:#fff;
+}
+.q-review{
+  margin-top:10px;
+  border-top:1px solid #ddd;
+  padding-top:10px;
+}
+.correct{color:green;}
+.wrong{color:red;}
+@media(max-width:600px){
+  button{font-size:15px;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- PASSAGE -->
+<div id="passage" class="card">
+<a href="YOUR_LINK_HERE" style="float:right; text-decoration:none;">
+  <button style="
+    padding:8px 14px;
+    background:#2196F3;
+    color:#fff;
+    border:none;
+    border-radius:6px;
+    font-size:14px;
+    cursor:pointer;
+  ">
+ଓଡ଼ିଆ
+  </button>
+</a> <br>
+ 
+<center><h2>Tribes of Odisha</h2></center>
+<h3>Kondh</h3>
+<p>Kondh is one of the largest tribes in Odisha. They worship hills, nature, and streams. Kondh people have deep knowledge of mountains, trees, forests, and plants.</p>
+
+
+<h3>Sauras</h3>
+<p>Sauras is an ancient tribe in India, mentioned in Hindu epics like Mahabharata and Ramayana. They have a unique shamanic culture and are skilled craftsmen, famous for Saura paintings.</p>
+
+
+<h3>Bonda</h3>
+<p>Bonda is one of the country's primitive tribes living in the hills of Malkangiri, Odisha. Their unique culture, customs, and traditional attire make them very popular.</p>
+
+
+<h3>Santhals</h3>
+<p>Santhals are the third largest tribe in India. They were great fighters during British rule and love music and dance. They are known for being fun-loving and lively.</p>
+
+
+<h3>Gonds</h3>
+<p>Gonds are a warrior tribe living in the hills of Koraput, Balangir, Sunderbans, Kalahandi, and Sambalpur. They are one of the largest tribes in South Asia.</p>
+
+<h3>Bhumias</h3>
+<p>Bhumia is a celebrated tribe in Odisha, rich in tradition and culture. Their unique marriage customs and rituals make them special.</p>
+
+<h3>Oraons</h3>
+<p>Oraons are considered one of the most progressive tribes. Many of them work in tea plantations, and many have moved to metro cities for work.</p>
+
+<h3>Koyas</h3>
+<p>Koyas are one of the top tribes in Odisha, known for their rich traditions, culture, and art. They mainly live in Malkangiri, Odisha, but some also live in Andhra Pradesh and Chhattisgarh.</p>
+
+<h3>Parajas</h3>
+<p>Parajas live in forests and hills and worship many gods and goddesses. They love music and dance and mainly work in agriculture.</p>
+
+<h3>Gadav</h3>
+<p>Gadav is one of the oldest tribes in Odisha, tracing history back to the Ramayana era. They are colorful and live through agriculture, hunting, and fishing.</p>
+
+<h3>Juanga</h3>
+<p>Juanga people speak a dialect of the Munda language. They celebrate festivals and marriages with Changu dance. Early marriages are common, which sometimes causes health issues for children born to young parents.</p><br>
+
+<center><h3>Important Rivers and Dams</h3></center>
+<p>Mahanadi River - Hirakud Dam</p>
+<p>Machkund River - Jalaput Dam</p>
+<p>Jonk River - Patora Dam</p>
+<p>Brahmani River - Rengali Dam</p>
+<p>Sankha River - Mandira Dam</p>
+<br>
+
+<center><h3>Important Lakes</h3></center>
+<p>Chilika Lake - Asia's largest brackish water lagoon</p>
+<p>Anshupa Lake - Odisha's largest freshwater lake</p>
+<p>Kanjia Lake - Located on the northern outskirts of Bhubaneswar</p>
+<br>
+
+<center><h3>Important Power Plants</h3></center>
+<p>Talcher Thermal Power Station - Coal-fired, second largest power plant in India</p>
+<p>IB Thermal Power Station - Located in Jharsuguda district</p>
+<p>Hirakud Power Plant - Located in Sambalpur district</p>
+<br>
+
+<center><h3>National Parks, Bird and Wildlife Sanctuaries</h3></center>
+<p>Simlipal National Park - National park and tiger reserve in Mayurbhanj district</p>
+<p>Bhitarkanika National Park - Located in Kendrapara district</p>
+<p>Satkosia Tiger Reserve - Tiger reserve in Angul district</p>
+<p>Hadgarh Wildlife Sanctuary - Located in Keonjhar and Mayurbhanj districts</p>
+<p>Nandankanan - Adjacent to Chandaka-Dampara Wildlife Sanctuary, near Kanjia Lake</p>
+<br>
+
+
+
+    
+<br>
+<center><button class="primary" onclick="startQuiz()">Attempt Questions</button></center>
+</div>
+
+<!-- QUIZ -->
+<div id="quiz" class="card hidden">
+<h3 id="qText"></h3>
+<div id="options"></div>
+
+<div class="nav-btns">
+<button class="secondary" onclick="prevQ()">Previous</button>
+<button class="primary" id="nextBtn" onclick="nextQ()">Next</button>
+</div>
+</div>
+
+<!-- RESULT -->
+<div id="result" class="card hidden">
+<h3>Result Summary</h3>
+<p id="summary"></p>
+
+<div class="tabs">
+<div class="tab active" onclick="filterReview('all')">All</div>
+<div class="tab" onclick="filterReview('correct')">Correct</div>
+<div class="tab" onclick="filterReview('wrong')">Wrong</div>
+<div class="tab" onclick="filterReview('unattempted')">Unattempted</div>
+</div>
+
+<div id="review"></div>
+
+<button class="secondary" onclick="closeQuiz()">Close</button>
+</div>
+
+</div>
+
+<script>
+const questions = [
+
+{
+q:"Which tribal group in Odisha is renowned for their profound ecological knowledge, particularly of mountains, trees, and streams?",
+options:["Santhals","Kondh","Juanga","Bonda"],
+ans:1
+},
+{
+q:"The Saura tribe, famous for their unique paintings, is historically referenced in which ancient Indian epics?",
+options:["Ramayana and Mahabharata","Rigveda and Mahabharata","Ramayana and Bhagavad Gita","Upanishads and Ramayana"],
+ans:0
+},
+{
+q:"Which primitive tribe residing in the Malkangiri hills is distinguished by its striking traditional attire and cultural uniqueness?",
+options:["Gadav","Oraons","Bonda","Parajas"],
+ans:2
+},
+{
+q:"Known for their vivacity and musical inclination, which tribe was historically recognized for their martial prowess during British rule?",
+options:["Koyas","Santhals","Bhumias","Kondh"],
+ans:1
+},
+{
+q:"The Gonds, one of South Asia’s largest tribes, are predominantly warriors residing in which set of regions?",
+options:["Koraput, Balangir, Sunderbans, Kalahandi, Sambalpur","Malkangiri, Odisha, Andhra Pradesh, Chhattisgarh","Hills of Odisha only","Cuttack, Bhubaneswar, Puri"],
+ans:0
+},
+{
+q:"The Bhumia tribe is celebrated in Odisha mainly for which of the following cultural aspects?",
+options:["Advanced urban settlements","Unique marriage customs and rituals","Painting and sculpture","Military expertise"],
+ans:1
+},
+{
+q:"Which tribal community is considered progressive due to their engagement in tea plantations and urban migration for employment?",
+options:["Gadav","Juanga","Oraons","Bonda"],
+ans:2
+},
+{
+q:"The Koya tribe, famous for their rich art and traditions, primarily inhabits which districts or states?",
+options:["Malkangiri, Odisha; parts of Andhra Pradesh and Chhattisgarh","Koraput, Odisha and West Bengal","Balangir, Odisha only","Odisha and Tamil Nadu"],
+ans:0
+},
+{
+q:"The Paraja tribe predominantly follows which of the following lifestyles?",
+options:["Urban industrial labor","Forest and hill dwelling with a focus on agriculture, music, and worship","Tea plantation work in metro cities","Fishing exclusively in coastal regions"],
+ans:1
+},
+{
+q:"Which of the following tribes traces its lineage back to the Ramayana era and maintains a colorful lifestyle through hunting, fishing, and agriculture?",
+options:["Gadav","Koyas","Bhumias","Juanga"],
+ans:0
+},
+{
+q:"The Juanga tribe, speaking a dialect of the Munda language, is culturally noted for which combination of practices that sometimes leads to health issues?",
+options:["Early marriages and Changu dance celebrations","Hunting and fishing in forests","Tea plantation labor and urban migration","Traditional painting and warrior rituals"],
+ans:0
+},
+{
+q:"Which major dam, constructed on the Mahanadi River, serves as one of India’s longest earthen dams and a significant irrigation source in Odisha?",
+options:["Hirakud Dam","Rengali Dam","Mandira Dam","Jalaput Dam"],
+ans:0
+},
+{
+q:"The Jalaput Dam, an important hydroelectric and irrigation project, is built on which river flowing through Odisha and neighboring regions?",
+options:["Jonk River","Machkund River","Sankha River","Brahmani River"],
+ans:1
+},
+{
+q:"Patora Dam, primarily serving irrigation and power generation purposes, is constructed across which river in Odisha?",
+options:["Jonk River","Mahanadi River","Sankha River","Brahmani River"],
+ans:0
+},
+{
+q:"Rengali Dam, known for flood control, irrigation, and hydropower generation, is located on which river?",
+options:["Sankha River","Brahmani River","Machkund River","Jonk River"],
+ans:1
+},
+{
+q:"Mandira Dam, an important reservoir for industrial and municipal water supply in Odisha, is built on which river?",
+options:["Sankha River","Machkund River","Mahanadi River","Brahmani River"],
+ans:0
+},
+{
+q:"Which lake, recognized as Asia’s largest brackish water lagoon, is a major habitat for migratory birds and aquatic biodiversity?",
+options:["Chilika Lake","Anshupa Lake","Kanjia Lake","Hirakud Lake"],
+ans:0
+},
+{
+q:"Odisha’s largest freshwater lake, noted for its horseshoe shape and ecological importance, is called:",
+options:["Chilika Lake","Anshupa Lake","Kanjia Lake","Mandira Lake"],
+ans:1
+},
+{
+q:"Which scenic lake, located on the northern outskirts of Bhubaneswar, is a popular recreational and ecological spot?",
+options:["Anshupa Lake","Kanjia Lake","Chilika Lake","Hirakud Lake"],
+ans:1
+},
+{
+q:"Which coal-fired power station, located in Odisha, is the second largest power plant in India?",
+options:["Hirakud Power Plant","IB Thermal Power Station","Talcher Thermal Power Station","Rengali Hydropower Plant"],
+ans:2
+},
+{
+q:"The IB Thermal Power Station, primarily coal-based, is situated in which district of Odisha?",
+options:["Sambalpur","Talcher","Jharsuguda","Koraput"],
+ans:2
+},
+{
+q:"Which power plant, located in Sambalpur district, is closely associated with a famous dam and primarily generates hydroelectric power?",
+options:["IB Thermal Power Station","Talcher Thermal Power Station","Hirakud Power Plant","Mandira Hydel Station"],
+ans:2
+},
+{
+q:"Which national park in Odisha, located in Mayurbhanj district, is both a tiger reserve and a biodiversity hotspot?",
+options:["Simlipal National Park","Bhitarkanika National Park","Satkosia Tiger Reserve","Hadgarh Wildlife Sanctuary"],
+ans:0
+},
+{
+q:"Known for its mangrove forests and estuarine ecosystem, Bhitarkanika National Park is located in which district?",
+options:["Kendrapara","Mayurbhanj","Angul","Keonjhar"],
+ans:0
+},
+{
+q:"Which tiger reserve in Odisha is located along the Mahanadi River in Angul district and is known for its gorge and wildlife diversity?",
+options:["Satkosia Tiger Reserve","Simlipal National Park","Bhitarkanika National Park","Nandankanan"],
+ans:0
+},
+{
+q:"Hadgarh Wildlife Sanctuary spans which districts and is noted for its diverse flora and fauna?",
+options:["Keonjhar and Mayurbhanj","Angul and Sambalpur","Kendrapara and Bhadrak","Cuttack and Puri"],
+ans:0
+},
+{
+q:"Adjacent to Chandaka-Dampara Wildlife Sanctuary and near Kanjia Lake, which sanctuary/zoo is famous for its white tigers?",
+options:["Nandankanan","Satkosia Tiger Reserve","Simlipal National Park","Bhitarkanika National Park"],
+ans:0
+}
+
+
+
+
+
+
+    
+];
+
+let index = 0;
+let answers = JSON.parse(localStorage.getItem("odishaQuiz")) || {};
+
+function startQuiz(){
+  answers = {}; // reset old stored answers
+  localStorage.removeItem("odishaQuiz"); // clear storage
+  index = 0;
+
+  passage.classList.add("hidden");
+  quiz.classList.remove("hidden");
+  loadQ();
+}
+
+function loadQ(){
+  let q = questions[index];
+  qText.innerText = (index+1)+". "+q.q;
+  options.innerHTML="";
+  q.options.forEach((op,i)=>{
+    let div=document.createElement("div");
+    div.className="option";
+    if(answers[index]===i) div.classList.add("selected");
+    div.innerText=op;
+    div.onclick=()=>{
+      answers[index]=i;
+      localStorage.setItem("odishaQuiz",JSON.stringify(answers));
+      loadQ();
+    };
+    options.appendChild(div);
+  });
+  nextBtn.innerText = index===questions.length-1 ? "Submit" : "Next";
+}
+
+function nextQ(){
+  if(index===questions.length-1){
+    showResult();
+  }else{
+    index++;
+    loadQ();
+  }
+}
+function prevQ(){
+  if(index>0){index--;loadQ();}
+}
+
+function showResult(){
+  quiz.classList.add("hidden");
+  result.classList.remove("hidden");
+
+  let c=0,w=0,u=0;
+  questions.forEach((q,i)=>{
+    if(answers[i]==null) u++;
+    else if(answers[i]===q.ans) c++;
+    else w++;
+  });
+  summary.innerText=`Correct: ${c}, Wrong: ${w}, Unattempted: ${u}`;
+  buildReview("all");
+}
+
+function buildReview(type){
+  review.innerHTML="";
+  questions.forEach((q,i)=>{
+    let ua=answers[i];
+    let status = ua==null ? "unattempted" : ua===q.ans ? "correct" : "wrong";
+    if(type!=="all" && type!==status) return;
+
+    let div=document.createElement("div");
+    div.className="q-review";
+    div.innerHTML=`<b>${i+1}. ${q.q}</b><br>
+    Your answer: <span class="${status}">${ua!=null?q.options[ua]:"Not Attempted"}</span><br>
+    Correct answer: <b>${q.options[q.ans]}</b>`;
+    review.appendChild(div);
+  });
+}
+
+function filterReview(t){
+  document.querySelectorAll(".tab").forEach(x=>x.classList.remove("active"));
+  event.target.classList.add("active");
+  buildReview(t);
+}
+
+function closeQuiz(){
+  result.classList.add("hidden");
+  passage.classList.remove("hidden");
+}
+</script>
+
+</body>
+</html>
