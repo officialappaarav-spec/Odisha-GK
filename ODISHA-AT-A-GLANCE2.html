@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Reading Passage with Quiz</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:#f4f6f8;
+  color:#333;
+}
+.container{
+  max-width:900px;
+  margin:auto;
+  padding:15px;
+}
+.card{
+  background:#fff;
+  border-radius:10px;
+  padding:15px;
+  margin-bottom:15px;
+  box-shadow:0 2px 6px rgba(0,0,0,0.1);
+}
+button{
+  border:none;
+  border-radius:8px;
+  padding:12px;
+  font-size:16px;
+  cursor:pointer;
+}
+.primary{
+  background:#2196f3;
+  color:#fff;
+}
+.secondary{
+  background:#ddd;
+}
+.option{
+  padding:12px;
+  border:1px solid #ccc;
+  border-radius:8px;
+  margin:8px 0;
+  cursor:pointer;
+}
+.option.selected{
+  background:#e3f2fd;
+  border-color:#2196f3;
+}
+.hidden{display:none;}
+.nav-btns{
+  display:flex;
+  gap:10px;
+  margin-top:10px;
+}
+.tabs{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+}
+.tab{
+  padding:8px 12px;
+  border-radius:20px;
+  background:#eee;
+  cursor:pointer;
+  font-size:14px;
+}
+.tab.active{
+  background:#2196f3;
+  color:#fff;
+}
+.q-review{
+  margin-top:10px;
+  border-top:1px solid #ddd;
+  padding-top:10px;
+}
+.correct{color:green;}
+.wrong{color:red;}
+@media(max-width:600px){
+  button{font-size:15px;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- PASSAGE -->
+<div id="passage" class="card">
+<center><h2>Odisha At a Glance - 2</h2></center>
+<h3>Revenue Divisions of Odisha</h3>
+<p>
+Odisha has 30 districts, which are divided into three revenue divisions to ensure smooth administration.<br>
+These divisions are Central Division, Northern Division, and Southern Division.
+</p>
+
+<p>
+Central Division has its headquarters at Cuttack.<br>
+Northern Division has its headquarters at Sambalpur.<br>
+Southern Division has its headquarters at Berhampur.
+</p>
+
+<p>
+Each revenue division consists of 10 districts.
+</p>
+
+<h3>Governor and State Government of Odisha</h3>
+<p>
+Odisha has a Governor and a Chief Minister who lead the state administration.
+</p>
+
+<h3>Odisha Legislative Assembly</h3>
+<p>
+The Odisha Legislative Assembly is a unicameral (single-house) legislature.<br>
+It is located in Bhubaneswar, the capital of Odisha.
+</p>
+
+<p>
+The Assembly has a total of 147 Members of Legislative Assembly (MLAs). Out of these:<br>
+33 seats are reserved for Scheduled Tribes (ST).<br>
+24 seats are reserved for Scheduled Castes (SC).
+</p>
+
+<p>
+The Secretariat building of Odisha in Bhubaneswar is called Lok Seva Bhavan, as announced by Chief Minister Naveen Patnaik.
+</p>
+
+<h3>17th (Current) Legislative Assembly of Odisha</h3>
+<p>
+Total Seats: 147<br>
+Speaker: Surama Padhy<br>
+Leader of the House: Mohan Charan Majhi<br>
+Leader of the Opposition: Naveen Patnaik
+</p>
+
+<h3>Governor of Odisha</h3>
+<p>
+The present Governor of Odisha is Kambhampati Hari Babu.<br>
+<b>Sir John Austen Hubback was the First Governor of Odisha.</b>
+</p>
+
+<h3>State Emblem of Odisha</h3>
+<p>
+On 3 August 1964, the Council of Ministers approved the Konark Horse statue as the State Emblem of Odisha.<br>
+The emblem represents discipline, strength, and progress.
+</p>
+
+<p>
+It is a circular seal showing the warrior and horse statue of the Konark Sun Temple.<br>
+The Lion Capital of Ashoka appears at the top of the emblem.
+</p>
+
+<h3>High Court of Odisha</h3>
+<p>
+Earlier, the Bengal Presidency included Assam, Bihar, Jharkhand, Orissa, and West Bengal.
+</p>
+
+<p>
+On 1 April 1936, Orissa became a separate province, but it did not have its own High Court.
+</p>
+
+<p>
+Later, the Government of India decided to establish a High Court and issued the Orissa High Court Order, 1948 on 30 April 1948 under Section 229(1) of the Government of India Act, 1935.
+</p>
+
+<p>
+The Orissa High Court was formally inaugurated on 26 July 1948.
+</p>
+
+<p>
+Present Chief Justice of Odisha - Dr. Justice Bidyut Ranjan Sarangi.
+</p>
+
+<p>
+Bira Kishore Ray (26 July 1948 – 30 October 1951) was an Indian judge who was the first Chief Justice of Orissa High Court.
+</p><br>
+
+<h3>Some Important Points</h3>
+
+
+<ul>
+  <li>As per the 2011 Census of India, the total number of households in Odisha was 9,661,085.</li>
+  <li>Based on the 2011 Census data, the total population of Odisha was 41,974,218.</li>
+  <li>According to the 2011 Census of India, the male population of Odisha was 21,212,136.</li>
+  <li>As per Census 2011, the total female population of Odisha was 20,762,082.</li>
+  <li>Odisha’s child population in the age group of 0–6 years was 5,273,194, as recorded in the 2011 Census.</li>
+  <li>The population density of Odisha was 270 persons per square kilometre according to the 2011 Census.</li>
+  <li>As per the 2011 Census, Odisha’s sex ratio was 979 females per 1,000 males.</li>
+  <li>The literacy rate of Odisha as per the Census of India 2011 was 72.87%.</li>
+  <li>Male literacy rate in Odisha, according to Census 2011, was 81.59%.</li>
+  <li>Female literacy rate in Odisha as per the 2011 Census was 64.01%.</li>
+  <li>As per Census 2011, Scheduled Tribes (ST) constituted 22.85% of the total population of Odisha.</li>
+  <li>According to the 2011 Census of India, Scheduled Castes (SC) formed 17.13% of Odisha’s population.</li>
+</ul>
+    
+<br>
+<center><button class="primary" onclick="startQuiz()">Attempt Questions</button></center>
+</div>
+
+<!-- QUIZ -->
+<div id="quiz" class="card hidden">
+<h3 id="qText"></h3>
+<div id="options"></div>
+
+<div class="nav-btns">
+<button class="secondary" onclick="prevQ()">Previous</button>
+<button class="primary" id="nextBtn" onclick="nextQ()">Next</button>
+</div>
+</div>
+
+<!-- RESULT -->
+<div id="result" class="card hidden">
+<h3>Result Summary</h3>
+<p id="summary"></p>
+
+<div class="tabs">
+<div class="tab active" onclick="filterReview('all')">All</div>
+<div class="tab" onclick="filterReview('correct')">Correct</div>
+<div class="tab" onclick="filterReview('wrong')">Wrong</div>
+<div class="tab" onclick="filterReview('unattempted')">Unattempted</div>
+</div>
+
+<div id="review"></div>
+
+<button class="secondary" onclick="closeQuiz()">Close</button>
+</div>
+
+</div>
+
+<script>
+const questions = [
+{
+q:"What is the administrative headquarters of the Northern Division of Odisha?",
+options:["Rourkela","Sambalpur","Jharsuguda","Balangir"],
+ans:1
+},
+{
+q:"Which city serves as the headquarters of the Central Division of Odisha?",
+options:["Bhubaneswar","Puri","Cuttack","Angul"],
+ans:2
+},
+{
+q:"The headquarters of the Southern Division of Odisha is located at which place?",
+options:["Koraput","Rayagada","Brahmapur","Nabarangpur"],
+ans:2
+},
+{
+q:"Out of the total 147 members of the Odisha Legislative Assembly, how many seats are constitutionally reserved for Scheduled Tribes (ST)?",
+options:["27","30","33","36"],
+ans:2
+},
+{
+q:"Among the 147 seats of the Odisha Legislative Assembly, how many are reserved for Scheduled Castes (SC)?",
+options:["21","22","24","26"],
+ans:2
+},
+{
+q:"The Secretariat building of Odisha located in Bhubaneswar was officially named __________ as announced by Chief Minister Naveen Patnaik.",
+options:["Odisha Bhavan","Jan Seva Bhavan","Lok Seva Bhavan","Kalinga Bhavan"],
+ans:2
+},
+{
+q:"Presently, which numbered Legislative Assembly is functioning in the state of Odisha?",
+options:["15th","16th","17th","18th"],
+ans:2
+},
+{
+q:"Who is the current Speaker of the Odisha Legislative Assembly?",
+options:["Pramila Mallik","Surama Padhy","Rajendra Sahoo","Bikram Keshari Arukha"],
+ans:1
+},
+{
+q:"Who was the first Speaker of the Odisha Legislative Assembly after its formation?",
+options:["Harekrushna Mahatab","Nilamani Routray","Mukunda Prasad Das","Nabakrushna Choudhury"],
+ans:2
+},
+{
+q:"Who is the present Leader of the House in the Odisha Legislative Assembly?",
+options:["Naveen Patnaik","Mohan Charan Majhi","Baijayant Panda","Pradipta Nayak"],
+ans:1
+},
+{
+q:"Who is currently serving as the Leader of the Opposition in the Odisha Legislative Assembly?",
+options:["Mohan Charan Majhi","Surama Padhy","Naveen Patnaik","Prasanna Acharya"],
+ans:2
+},
+{
+q:"Who is the present Governor of the state of Odisha?",
+options:["Ganeshi Lal","Raghubar Das","Kambhampati Hari Babu","S. C. Jamir"],
+ans:2
+},
+{
+q:"Who was the first Governor of Odisha after its formation as a separate province?",
+options:["Lord Mountbatten","Sir John Austen Hubback","Chakravarti Rajagopalachari","Kailash Nath Katju"],
+ans:1
+},
+{
+q:"On which date did Odisha officially adopt its state emblem?",
+options:["1 April 1963","15 August 1964","3 August 1964","26 January 1965"],
+ans:2
+},
+{
+q:"What is the officially recognized state emblem of Odisha?",
+options:["Lion Capital of Ashoka","Konark Sun Temple","Konark Horse Statue","Dhauli Peace Pagoda"],
+ans:2
+},
+{
+q:"The Konark Horse Statue, which serves as the state emblem of Odisha, symbolises which of the following values?",
+options:["Courage, Unity and Peace","Power, Justice and Freedom","Discipline, Strength and Progress","Heritage, Culture and Pride"],
+ans:2
+},
+{
+q:"What is positioned at the top of the Konark Horse Statue, the official state emblem of Odisha?",
+options:["Chakra","National Flag","Lion Capital of Ashoka","Sun Disc"],
+ans:2
+},
+{
+q:"On which date did the Government of India issue the order for the establishment of the Orissa High Court?",
+options:["26 January 1947","15 August 1947","30 April 1948","2 October 1948"],
+ans:2
+},
+{
+q:"When was the Orissa High Court formally inaugurated and began functioning?",
+options:["15 August 1947","30 April 1948","26 July 1948","1 January 1949"],
+ans:2
+},
+{
+q:"Who is the present Chief Justice of the Orissa High Court?",
+options:["Justice S. Muralidhar","Justice B. R. Sarangi","Justice A. K. Mishra","Justice P. K. Tripathy"],
+ans:1
+},
+{
+q:"Bira Kishore Ray was an eminent Indian jurist who served as the __________ of the Orissa High Court.",
+options:["First Advocate General","First Chief Justice","First Governor","First Law Minister"],
+ans:1
+},
+{
+q:"According to the Census of India 2011, what was the total number of households in Odisha?",
+options:["8,961,085","9,261,085","9,661,085","10,061,085"],
+ans:2
+},
+{
+q:"As per the 2011 Census of India, what was the total population of Odisha?",
+options:["39,974,218","40,874,218","41,974,218","42,974,218"],
+ans:2
+},
+{
+q:"Based on Census 2011 data, what was the male population of Odisha?",
+options:["20,512,136","20,912,136","21,212,136","21,812,136"],
+ans:2
+},
+{
+q:"What was the total female population of Odisha according to the 2011 Census?",
+options:["19,762,082","20,262,082","20,762,082","21,162,082"],
+ans:2
+},
+{
+q:"As per the Census of India 2011, what was the child population (0–6 years) of Odisha?",
+options:["4,873,194","5,073,194","5,273,194","5,573,194"],
+ans:2
+},
+{
+q:"What was the population density of Odisha according to the 2011 Census?",
+options:["250 persons per sq. km","260 persons per sq. km","270 persons per sq. km","280 persons per sq. km"],
+ans:2
+},
+{
+q:"As per Census 2011, what was the sex ratio of Odisha?",
+options:["950 females per 1,000 males","960 females per 1,000 males","979 females per 1,000 males","990 females per 1,000 males"],
+ans:2
+},
+{
+q:"What was the overall literacy rate of Odisha as recorded in the Census of India 2011?",
+options:["69.87%","71.45%","72.87%","74.32%"],
+ans:2
+},
+{
+q:"According to Census 2011, what was the male literacy rate in Odisha?",
+options:["78.59%","79.84%","81.59%","83.21%"],
+ans:2
+},
+{
+q:"What was the female literacy rate in Odisha as per the 2011 Census?",
+options:["61.01%","62.98%","64.01%","66.15%"],
+ans:2
+},
+{
+q:"Scheduled Tribes (ST) constituted what percentage of Odisha’s population according to Census 2011?",
+options:["20.85%","21.92%","22.85%","23.70%"],
+ans:2
+},
+{
+q:"As per the Census of India 2011, what percentage of Odisha’s population belonged to Scheduled Castes (SC)?",
+options:["15.13%","16.45%","17.13%","18.26%"],
+ans:2
+}
+];
+
+let index = 0;
+let answers = JSON.parse(localStorage.getItem("odishaQuiz")) || {};
+
+function startQuiz(){
+  answers = {}; // reset old stored answers
+  localStorage.removeItem("odishaQuiz"); // clear storage
+  index = 0;
+
+  passage.classList.add("hidden");
+  quiz.classList.remove("hidden");
+  loadQ();
+}
+
+function loadQ(){
+  let q = questions[index];
+  qText.innerText = (index+1)+". "+q.q;
+  options.innerHTML="";
+  q.options.forEach((op,i)=>{
+    let div=document.createElement("div");
+    div.className="option";
+    if(answers[index]===i) div.classList.add("selected");
+    div.innerText=op;
+    div.onclick=()=>{
+      answers[index]=i;
+      localStorage.setItem("odishaQuiz",JSON.stringify(answers));
+      loadQ();
+    };
+    options.appendChild(div);
+  });
+  nextBtn.innerText = index===questions.length-1 ? "Submit" : "Next";
+}
+
+function nextQ(){
+  if(index===questions.length-1){
+    showResult();
+  }else{
+    index++;
+    loadQ();
+  }
+}
+function prevQ(){
+  if(index>0){index--;loadQ();}
+}
+
+function showResult(){
+  quiz.classList.add("hidden");
+  result.classList.remove("hidden");
+
+  let c=0,w=0,u=0;
+  questions.forEach((q,i)=>{
+    if(answers[i]==null) u++;
+    else if(answers[i]===q.ans) c++;
+    else w++;
+  });
+  summary.innerText=`Correct: ${c}, Wrong: ${w}, Unattempted: ${u}`;
+  buildReview("all");
+}
+
+function buildReview(type){
+  review.innerHTML="";
+  questions.forEach((q,i)=>{
+    let ua=answers[i];
+    let status = ua==null ? "unattempted" : ua===q.ans ? "correct" : "wrong";
+    if(type!=="all" && type!==status) return;
+
+    let div=document.createElement("div");
+    div.className="q-review";
+    div.innerHTML=`<b>${i+1}. ${q.q}</b><br>
+    Your answer: <span class="${status}">${ua!=null?q.options[ua]:"Not Attempted"}</span><br>
+    Correct answer: <b>${q.options[q.ans]}</b>`;
+    review.appendChild(div);
+  });
+}
+
+function filterReview(t){
+  document.querySelectorAll(".tab").forEach(x=>x.classList.remove("active"));
+  event.target.classList.add("active");
+  buildReview(t);
+}
+
+function closeQuiz(){
+  result.classList.add("hidden");
+  passage.classList.remove("hidden");
+}
+</script>
+
+</body>
+</html>
