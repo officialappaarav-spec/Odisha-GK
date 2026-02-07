@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Reading Passage with Quiz</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:#f4f6f8;
+  color:#333;
+}
+.container{
+  max-width:900px;
+  margin:auto;
+  padding:15px;
+}
+.card{
+  background:#fff;
+  border-radius:10px;
+  padding:15px;
+  margin-bottom:15px;
+  box-shadow:0 2px 6px rgba(0,0,0,0.1);
+}
+button{
+  border:none;
+  border-radius:8px;
+  padding:12px;
+  font-size:16px;
+  cursor:pointer;
+}
+.primary{
+  background:#2196f3;
+  color:#fff;
+}
+.secondary{
+  background:#ddd;
+}
+.option{
+  padding:12px;
+  border:1px solid #ccc;
+  border-radius:8px;
+  margin:8px 0;
+  cursor:pointer;
+}
+.option.selected{
+  background:#e3f2fd;
+  border-color:#2196f3;
+}
+.hidden{display:none;}
+.nav-btns{
+  display:flex;
+  gap:10px;
+  margin-top:10px;
+}
+.tabs{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+}
+.tab{
+  padding:8px 12px;
+  border-radius:20px;
+  background:#eee;
+  cursor:pointer;
+  font-size:14px;
+}
+.tab.active{
+  background:#2196f3;
+  color:#fff;
+}
+.q-review{
+  margin-top:10px;
+  border-top:1px solid #ddd;
+  padding-top:10px;
+}
+.correct{color:green;}
+.wrong{color:red;}
+@media(max-width:600px){
+  button{font-size:15px;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- PASSAGE -->
+<div id="passage" class="card">
+<a href="YOUR_LINK_HERE" style="float:right; text-decoration:none;">
+  <button style="
+    padding:8px 14px;
+    background:#2196F3;
+    color:#fff;
+    border:none;
+    border-radius:6px;
+    font-size:14px;
+    cursor:pointer;
+  ">
+ଓଡ଼ିଆ
+  </button>
+</a> <br>
+ 
+
+<h2 style="text-align:center; color:#222; margin-bottom:10px;">
+📘 Important Firsts of Odisha (Question–Answer)
+</h2>
+
+<div style="overflow-x:auto;">
+<table style="width:100%; border-collapse:collapse; background:#fff; box-shadow:0 2px 6px rgba(0,0,0,0.1);">
+
+<tr style="background:#2196F2FF; color:#fff;">
+<th style="padding:10px; border:1px solid #ddd; text-align:left;">Question</th>
+<th style="padding:10px; border:1px solid #ddd; text-align:left;">Answer</th>
+</tr>
+
+<tr>
+  <td style="padding:8px; border:1px solid #ddd;">Who was the first Odia Speaker of the Lok Sabha from Odisha?</td>
+  <td style="padding:8px; border:1px solid #ddd;">Rabi Ray</td>
+</tr>
+
+<tr>
+  <td style="padding:8px; border:1px solid #ddd;">Who was the first Odia Padmashree awardee from Odisha (Education)?</td>
+  <td style="padding:8px; border:1px solid #ddd;">Laxminarayan Sahu</td>
+</tr>
+
+<tr>
+  <td style="padding:8px; border:1px solid #ddd;">Who was the first Odia Police Commissioner of Odisha?</td>
+  <td style="padding:8px; border:1px solid #ddd;">Srikrushna Mohapatra</td>
+</tr>
+
+<tr>
+  <td style="padding:8px; border:1px solid #ddd;">Who was the first Padmabhusan awardee from Odisha?</td>
+  <td style="padding:8px; border:1px solid #ddd;">Prof. Pranakrushna Parija</td>
+</tr>
+
+<tr>
+  <td style="padding:8px; border:1px solid #ddd;">Where was the first paper factory of Odisha established?</td>
+  <td style="padding:8px; border:1px solid #ddd;">Brajaraj Nagar</td>
+</tr>
+
+<tr>
+  <td style="padding:8px; border:1px solid #ddd;">Who was the first Rajya Sabha member from Odisha?</td>
+  <td style="padding:8px; border:1px solid #ddd;">Nandini Satapathy</td>
+</tr>
+
+<tr>
+  <td style="padding:8px; border:1px solid #ddd;">Which was the first Odia film song and when was it released?</td>
+  <td style="padding:8px; border:1px solid #ddd;">Basanta Rasa (1984)</td>
+</tr>
+
+<tr>
+  <td style="padding:8px; border:1px solid #ddd;">Which was the first superfast train of Odisha?</td>
+  <td style="padding:8px; border:1px solid #ddd;">Konark Express (Bhubaneswar to Mumbai)</td>
+</tr>
+
+<tr>
+  <td style="padding:8px; border:1px solid #ddd;">Which was the first television centre of Odisha?</td>
+  <td style="padding:8px; border:1px solid #ddd;">Doordarshan, Sambalpur</td>
+</tr>
+
+<tr>
+  <td style="padding:8px; border:1px solid #ddd;">Who was the first woman author from Odisha to receive the Sahitya Akademi Award?</td>
+  <td style="padding:8px; border:1px solid #ddd;">Smt. Binapani Mohanty</td>
+</tr>
+
+<tr>
+  <td style="padding:8px; border:1px solid #ddd;">Who was the first woman barrister of Odisha?</td>
+  <td style="padding:8px; border:1px solid #ddd;">Urmila Ray</td>
+</tr>
+<tr>
+  <td style="padding:8px; border:1px solid #ddd;">Who was the first woman Chief Minister of Odisha?</td>
+  <td style="padding:8px; border:1px solid #ddd;">Smt. Nandini Satapathy</td>
+</tr>
+
+<tr>
+  <td style="padding:8px; border:1px solid #ddd;">Who was the first woman college lecturer of Odisha?</td>
+  <td style="padding:8px; border:1px solid #ddd;">Nirmala Nayak</td>
+</tr>
+
+<tr>
+  <td style="padding:8px; border:1px solid #ddd;">Who was the first woman commissioner of Odisha?</td>
+  <td style="padding:8px; border:1px solid #ddd;">Ranu Mishra</td>
+</tr>
+
+<tr>
+  <td style="padding:8px; border:1px solid #ddd;">Who was the first woman director of an Odia film?</td>
+  <td style="padding:8px; border:1px solid #ddd;">Parvati Ghosh</td>
+</tr>
+
+<tr>
+  <td style="padding:8px; border:1px solid #ddd;">Who was the first woman IAS officer from Odisha?</td>
+  <td style="padding:8px; border:1px solid #ddd;">Pragnya Paramita Das</td>
+</tr>
+
+<tr>
+  <td style="padding:8px; border:1px solid #ddd;">Who was the first woman IAS topper from Odisha?</td>
+  <td style="padding:8px; border:1px solid #ddd;">Rupa Mishra</td>
+</tr>
+
+<tr>
+  <td style="padding:8px; border:1px solid #ddd;">Who was the first woman IPS officer from Odisha?</td>
+  <td style="padding:8px; border:1px solid #ddd;">Sowmya Mishra</td>
+</tr>
+
+<tr>
+  <td style="padding:8px; border:1px solid #ddd;">Who was the first woman judge of the Odisha High Court?</td>
+  <td style="padding:8px; border:1px solid #ddd;">Amiya Kumari Padhi</td>
+</tr>
+
+<tr>
+  <td style="padding:8px; border:1px solid #ddd;">Who was the first woman minister of Odisha?</td>
+  <td style="padding:8px; border:1px solid #ddd;">Basanta Manjari Devi</td>
+</tr>
+
+<tr>
+  <td style="padding:8px; border:1px solid #ddd;">Who was the first woman MLA of Odisha?</td>
+  <td style="padding:8px; border:1px solid #ddd;">Sarala Devi</td>
+</tr>
+<tr>
+  <td style="padding:8px; border:1px solid #ddd;">Who established the first All India Radio station in Odisha?</td>
+  <td style="padding:8px; border:1px solid #ddd;">Akashvani, Cuttack (1948)</td>
+</tr>
+
+<tr>
+  <td style="padding:8px; border:1px solid #ddd;">Who was the first ambassador from Odisha?</td>
+  <td style="padding:8px; border:1px solid #ddd;">Lalitendu Mansingh</td>
+</tr>
+
+<tr>
+  <td style="padding:8px; border:1px solid #ddd;">Who was the first Odia to receive the Jnanpith Award?</td>
+  <td style="padding:8px; border:1px solid #ddd;">Gopinath Mohanty</td>
+</tr>
+
+<tr>
+  <td style="padding:8px; border:1px solid #ddd;">Who was the first Central Minister from Odisha?</td>
+  <td style="padding:8px; border:1px solid #ddd;">Dr. Harekrushna Mahtab</td>
+</tr>
+
+<tr>
+  <td style="padding:8px; border:1px solid #ddd;">Who was the first Chief Justice of India from Odisha?</td>
+  <td style="padding:8px; border:1px solid #ddd;">Ranganath Mishra</td>
+</tr>
+
+<tr>
+  <td style="padding:8px; border:1px solid #ddd;">Which was the first colour Odia film?</td>
+  <td style="padding:8px; border:1px solid #ddd;">Gapa Helebi Sata (1976)</td>
+</tr>
+
+<tr>
+  <td style="padding:8px; border:1px solid #ddd;">Which was the first daily newspaper of Odisha?</td>
+  <td style="padding:8px; border:1px solid #ddd;">Dainika Asha</td>
+</tr>
+
+<tr>
+  <td style="padding:8px; border:1px solid #ddd;">Who was the first Governor of Odisha?</td>
+  <td style="padding:8px; border:1px solid #ddd;">Dr. Harekrushna Mahtab</td>
+</tr>
+
+<tr>
+  <td style="padding:8px; border:1px solid #ddd;">Which was the first jute mill of Odisha?</td>
+  <td style="padding:8px; border:1px solid #ddd;">Konark Jute Mill</td>
+</tr>
+
+<tr>
+  <td style="padding:8px; border:1px solid #ddd;">Which was the first newspaper published in Odia language?</td>
+  <td style="padding:8px; border:1px solid #ddd;">Utkal Deepika</td>
+</tr>
+
+<tr>
+  <td style="padding:8px; border:1px solid #ddd;">Which was the first Odia film to receive Arjuna Award?</td>
+  <td style="padding:8px; border:1px solid #ddd;">Minati Mohapatra</td>
+</tr>
+
+<tr>
+  <td style="padding:8px; border:1px solid #ddd;">Who was the first Odia woman to climb Mount Everest?</td>
+  <td style="padding:8px; border:1px solid #ddd;">Chetana Sahu</td>
+</tr>
+
+<tr>
+  <td style="padding:8px; border:1px solid #ddd;">Which was the first Odia feature film?</td>
+  <td style="padding:8px; border:1px solid #ddd;">Sita Bibaha (1936)</td>
+</tr>
+
+<tr>
+  <td style="padding:8px; border:1px solid #ddd;">Which was the first Odia film made in 15 languages?</td>
+  <td style="padding:8px; border:1px solid #ddd;">Jai Jagannath (2007)</td>
+</tr>
+
+<tr>
+  <td style="padding:8px; border:1px solid #ddd;">Who was the first Odia international cricket player?</td>
+  <td style="padding:8px; border:1px solid #ddd;">Debasish Mohanty</td>
+</tr>    
+</table>
+</div>
+
+
+
+
+
+    
+<br>
+<center><button class="primary" onclick="startQuiz()">Attempt Questions</button></center>
+</div>
+
+<!-- QUIZ -->
+<div id="quiz" class="card hidden">
+<h3 id="qText"></h3>
+<div id="options"></div>
+
+<div class="nav-btns">
+<button class="secondary" onclick="prevQ()">Previous</button>
+<button class="primary" id="nextBtn" onclick="nextQ()">Next</button>
+</div>
+</div>
+
+<!-- RESULT -->
+<div id="result" class="card hidden">
+<h3>Result Summary</h3>
+<p id="summary"></p>
+
+<div class="tabs">
+<div class="tab active" onclick="filterReview('all')">All</div>
+<div class="tab" onclick="filterReview('correct')">Correct</div>
+<div class="tab" onclick="filterReview('wrong')">Wrong</div>
+<div class="tab" onclick="filterReview('unattempted')">Unattempted</div>
+</div>
+
+<div id="review"></div>
+
+<button class="secondary" onclick="closeQuiz()">Close</button>
+</div>
+
+</div>
+
+<script>
+const questions = [
+{
+q:"Who was the first Odia political leader from Odisha to serve as the Speaker of the Lok Sabha of India?",
+options:["Harekrushna Mahtab","Biju Patnaik","Rabi Ray","Nandini Satapathy"],
+ans:2
+},
+{
+q:"Who was the first Odia educationist from Odisha to be conferred with the Padma Shri Award in the field of Education?",
+options:["Gopinath Mohanty","Laxminarayan Sahu","Godabarish Mishra","Pranakrushna Parija"],
+ans:1
+},
+{
+q:"Who was the first Odia officer to be appointed as the Police Commissioner of Odisha?",
+options:["Bibhuti Bhusan Mishra","Srikrushna Mohapatra","Ranu Mishra","Satya Prakash Nayak"],
+ans:1
+},
+{
+q:"Who was the first personality from Odisha to receive the Padma Bhushan Award for outstanding contributions to science and education?",
+options:["Godabarish Mishra","Prof. Pranakrushna Parija","Gopinath Mohanty","Nilakantha Das"],
+ans:1
+},
+{
+q:"At which industrial town was the first paper manufacturing factory of Odisha established?",
+options:["Rayagada","Brajaraj Nagar","Choudwar","Rourkela"],
+ans:1
+},
+{
+q:"Who was the first representative from Odisha to be nominated as a Member of the Rajya Sabha?",
+options:["Harekrushna Mahtab","Nandini Satapathy","Biju Patnaik","Rabi Ray"],
+ans:1
+},
+{
+q:"Which was the first Odia film song, and in which year was it officially released?",
+options:["Sita Bibaha – 1936","Basanta Rasa – 1984","Chilika Tire – 1977","Maya Miriga – 1984"],
+ans:1
+},
+{
+q:"Which train was recognized as the first superfast express train originating from Odisha?",
+options:["Neelachal Express","Puri Express","Konark Express","Hirakud Express"],
+ans:2
+},
+{
+q:"Where was the first television broadcasting centre of Odisha established?",
+options:["Bhubaneswar","Cuttack","Sambalpur","Berhampur"],
+ans:2
+},
+{
+q:"Who was the first woman writer from Odisha to receive the prestigious Sahitya Akademi Award?",
+options:["Pratibha Ray","Smt. Binapani Mohanty","Sarala Devi","Rama Devi"],
+ans:1
+},
+{
+q:"Who was the first woman from Odisha to qualify and practice as a barrister in British India?",
+options:["Ranu Mishra","Urmila Ray","Nandini Satapathy","Annapurna Devi"],
+ans:1
+},
+{
+q:"Who was the first woman to hold the office of Chief Minister of Odisha?",
+options:["Pratibha Patnaik","Sarala Devi","Smt. Nandini Satapathy","Rama Devi"],
+ans:2
+},
+{
+q:"Who was the first woman academic from Odisha to be appointed as a college lecturer?",
+options:["Urmila Ray","Binapani Mohanty","Nirmala Nayak","Pratibha Ray"],
+ans:2
+},
+{
+q:"Who was the first woman officer to be appointed as a Commissioner in the state of Odisha?",
+options:["Ranu Mishra","Nandini Satapathy","Urmila Ray","Sarala Devi"],
+ans:0
+},
+{
+q:"Who was the first woman to direct an Odia feature film, marking a milestone in Odia cinema?",
+options:["Aparna Sen","Pratibha Ray","Parvati Ghosh","Binapani Mohanty"],
+ans:2
+},
+{
+q:"Who was the first woman from Odisha to be selected into the Indian Administrative Service (IAS)?",
+options:["Rupa Mishra","Sowmya Mishra","Pragnya Paramita Das","Amiya Kumari Padhi"],
+ans:2
+},
+{
+q:"Who was the first woman IAS officer from Odisha to secure the top rank in the Civil Services Examination?",
+options:["Pragnya Paramita Das","Rupa Mishra","Sowmya Mishra","Nandini Satapathy"],
+ans:1
+},
+{
+q:"Who was the first woman from Odisha to join the Indian Police Service (IPS)?",
+options:["Ranu Mishra","Sowmya Mishra","Pragnya Paramita Das","Urmila Ray"],
+ans:1
+},
+{
+q:"Who was the first woman to be appointed as a judge of the Odisha High Court?",
+options:["Amiya Kumari Padhi","Rupa Mishra","Sarala Devi","Basanta Manjari Devi"],
+ans:0
+},
+{
+q:"Who was the first woman to serve as a minister in the Government of Odisha?",
+options:["Sarala Devi","Rama Devi","Basanta Manjari Devi","Nandini Satapathy"],
+ans:2
+},
+{
+q:"Who was the first woman elected as a Member of the Legislative Assembly (MLA) in Odisha?",
+options:["Basanta Manjari Devi","Sarala Devi","Rama Devi","Annapurna Devi"],
+ans:1
+},
+{
+q:"Where was the first All India Radio (Akashvani) station of Odisha established, and in which year did it begin operations?",
+options:["Bhubaneswar – 1954","Sambalpur – 1950","Cuttack – 1948","Berhampur – 1952"],
+ans:2
+},
+{
+q:"Who was the first diplomat from Odisha to serve as an Ambassador of India abroad?",
+options:["Ranganath Mishra","Lalitendu Mansingh","Harekrushna Mahtab","Rabi Ray"],
+ans:1
+},
+{
+q:"Who was the first Odia literary figure to be honoured with the prestigious Jnanpith Award?",
+options:["Fakir Mohan Senapati","Gopinath Mohanty","Sitakant Mahapatra","Pratibha Ray"],
+ans:1
+},
+{
+q:"Who was the first leader from Odisha to hold the office of Union (Central) Minister in the Government of India?",
+options:["Biju Patnaik","Rabi Ray","Dr. Harekrushna Mahtab","Nandini Satapathy"],
+ans:2
+},
+{
+q:"Who was the first person from Odisha to be appointed as the Chief Justice of India?",
+options:["Dipak Misra","Ranganath Mishra","Lalitendu Mansingh","Harekrushna Mahtab"],
+ans:1
+},
+{
+q:"Which was the first colour feature film produced in the Odia language?",
+options:["Sita Bibaha","Maya Miriga","Gapa Helebi Sata","Chilika Tire"],
+ans:2
+},
+{
+q:"Which was the first daily newspaper published in Odisha, marking the beginning of daily print journalism in the state?",
+options:["Samaja","Utkal Deepika","Dainika Asha","Prajatantra"],
+ans:2
+},
+{
+q:"Who was the first Governor of Odisha after its formation as a separate province in British India?",
+options:["John Austin Hubback","Dr. Harekrushna Mahtab","Ranganath Mishra","Harekrushna Mahatab"],
+ans:1
+},
+{
+q:"Which industrial unit is recognized as the first jute mill established in the state of Odisha?",
+options:["Titlagarh Jute Mill","Konark Jute Mill","Cuttack Jute Works","Hirakud Jute Factory"],
+ans:1
+},
+{
+q:"Which was the first newspaper published in the Odia language, playing a crucial role in the Odia linguistic movement?",
+options:["Samaja","Dainika Asha","Utkal Deepika","Prajatantra"],
+ans:2
+},
+{
+q:"Which Odia sportsperson was associated with the first Odia film to receive the prestigious Arjuna Award?",
+options:["Anuradha Biswal","Minati Mohapatra","Pramila Pradhan","Jyotirmayee Sikdar"],
+ans:1
+},
+{
+q:"Who was the first woman from Odisha to successfully scale Mount Everest, achieving a historic mountaineering feat?",
+options:["Kalpana Dash","Mamata Panda","Chetana Sahu","Nivedita Mishra"],
+ans:2
+},
+{
+q:"Which was the first Odia feature film ever produced, marking the beginning of Odia cinema?",
+options:["Lalita","Chilika Tire","Sita Bibaha (1936)","Maya Miriga"],
+ans:2
+},
+{
+q:"Which Odia film was the first to be produced simultaneously in 15 different languages, showcasing Odia cinema on a global scale?",
+options:["Jai Jagannath (2007)","Mahaprasad","Srikhetra","Saptapadi"],
+ans:0
+},
+{
+q:"Who was the first cricketer from Odisha to represent India at the international level?",
+options:["Sanjay Raul","Debasish Mohanty","Ramesh Powar","Biplab Samantray"],
+ans:1
+}
+
+
+
+
+
+
+
+
+
+    
+];
+
+let index = 0;
+let answers = JSON.parse(localStorage.getItem("odishaQuiz")) || {};
+
+function startQuiz(){
+  answers = {}; // reset old stored answers
+  localStorage.removeItem("odishaQuiz"); // clear storage
+  index = 0;
+
+  passage.classList.add("hidden");
+  quiz.classList.remove("hidden");
+  loadQ();
+}
+
+function loadQ(){
+  let q = questions[index];
+  qText.innerText = (index+1)+". "+q.q;
+  options.innerHTML="";
+  q.options.forEach((op,i)=>{
+    let div=document.createElement("div");
+    div.className="option";
+    if(answers[index]===i) div.classList.add("selected");
+    div.innerText=op;
+    div.onclick=()=>{
+      answers[index]=i;
+      localStorage.setItem("odishaQuiz",JSON.stringify(answers));
+      loadQ();
+    };
+    options.appendChild(div);
+  });
+  nextBtn.innerText = index===questions.length-1 ? "Submit" : "Next";
+}
+
+function nextQ(){
+  if(index===questions.length-1){
+    showResult();
+  }else{
+    index++;
+    loadQ();
+  }
+}
+function prevQ(){
+  if(index>0){index--;loadQ();}
+}
+
+function showResult(){
+  quiz.classList.add("hidden");
+  result.classList.remove("hidden");
+
+  let c=0,w=0,u=0;
+  questions.forEach((q,i)=>{
+    if(answers[i]==null) u++;
+    else if(answers[i]===q.ans) c++;
+    else w++;
+  });
+  summary.innerText=`Correct: ${c}, Wrong: ${w}, Unattempted: ${u}`;
+  buildReview("all");
+}
+
+function buildReview(type){
+  review.innerHTML="";
+  questions.forEach((q,i)=>{
+    let ua=answers[i];
+    let status = ua==null ? "unattempted" : ua===q.ans ? "correct" : "wrong";
+    if(type!=="all" && type!==status) return;
+
+    let div=document.createElement("div");
+    div.className="q-review";
+    div.innerHTML=`<b>${i+1}. ${q.q}</b><br>
+    Your answer: <span class="${status}">${ua!=null?q.options[ua]:"Not Attempted"}</span><br>
+    Correct answer: <b>${q.options[q.ans]}</b>`;
+    review.appendChild(div);
+  });
+}
+
+function filterReview(t){
+  document.querySelectorAll(".tab").forEach(x=>x.classList.remove("active"));
+  event.target.classList.add("active");
+  buildReview(t);
+}
+
+function closeQuiz(){
+  result.classList.add("hidden");
+  passage.classList.remove("hidden");
+}
+</script>
+
+</body>
+</html>
